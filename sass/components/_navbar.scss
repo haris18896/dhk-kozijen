@@ -1,0 +1,300 @@
+.navbar{
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    
+    @include breakpoint-down(medium){
+        // margin-bottom: 6rem;
+        // padding-top: 3rem;
+        // padding-left: 2rem;
+        // padding-right: 2rem;
+    }
+
+
+
+    &__wrapper{
+        display: flex;
+    }
+    
+    &__logo{
+        margin-top: 2.5rem;
+    }
+    
+    &__list{
+        @include reset-list;
+        @include flex-between-center;
+
+        @include breakpoint-down(medium){
+            display: none;
+        }
+        
+        
+        color: white;
+        font-size: 1.4rem;
+        font-weight: 500;
+        
+        &--1{
+            flex: 90%;
+            // @include breakpoint-down(medium){
+            //     flex: 50%;
+            // }
+        }
+        
+        &--lang{
+            padding-left: 4rem;
+            @include breakpoint-down(medium){
+                padding-left: 0rem;
+            }
+        }
+    }
+    
+    &__item{
+        
+        font-family: 'Alegreya', serif;
+        font-size: 1.6rem;
+        font-weight: 500;
+        text-transform: uppercase;
+       
+        
+        
+        &--logo{
+            
+            @include breakpoint-down(medium){
+                display: block;
+            }
+            // margin-top: 1rem;
+            // & img{
+            //     width: 100%;
+            //     height: auto;
+            // }
+        }
+        
+        &--menu{
+            @include breakpoint-up(large){
+                display: none;
+            }
+            
+            @include breakpoint-down(medium){
+                display: block;
+            }
+        }
+        
+        &:hover{
+            cursor: pointer;
+            color: #A40700;
+        }
+
+        // &:active{
+        //     color: #A40700;
+        //     border-bottom: 0.2rem solid #A40700;
+        //     padding-bottom: 0.4rem;
+        //     margin-bottom: -0.6rem;
+        // }
+        
+        // &::after{
+        //     color: #A40700;
+        //     border-bottom: 0.2rem solid #A40700;
+        //     padding-bottom: 0.4rem;
+        //     margin-bottom: -0.6rem;
+        // }
+
+        
+        
+        &--lang{
+
+            flex: 10%;
+            &--active{
+                background-color: white;
+                color: #A40700;
+                padding: 1rem;
+            }
+
+            @include breakpoint-down(medium){
+                display: block;
+            }
+
+            &:not(:last-child){
+                margin-right: 2.3rem;
+            }
+
+
+        }
+    }
+
+    &__box{
+        background-color: black;
+    }
+
+    &__cross{
+        color: white;
+    }
+
+
+    &__mob{
+        width: 100%;
+        color: white;
+        font-size: 1.4rem;
+        font-weight: 500;
+
+        &__box{
+            color: white;
+            background-color: black;
+            min-height: fit-content;
+            overflow-y: hidden;
+            position: relative;
+
+            @include breakpoint-up(large){
+                display: none;
+            }
+        }
+
+        &__boxShadow{
+            // background-color: white;
+            @include breakpoint-up(large){
+                display: none;
+            }
+        }
+
+
+        &__iconDiv{
+            margin-left: 2rem;
+            margin-top: 0rem;
+            @include breakpoint-up(XxSmall){
+                margin-left: 2rem;
+                margin-top: 5rem;   
+            }
+        }
+        &__navItems{
+            @include flex-center;
+            text-align: center;
+            font-family: 'Alegreya', serif;
+            font-weight: 500;
+            text-align: center;
+            margin-top: 1rem;
+           
+
+
+        }
+        &--links{
+            text-decoration: none;
+            text-align: center;
+        }
+        &__ul{
+            padding: 0;
+            list-style-type: none;
+            font-family: 'Alegreya', serif;
+           
+          
+
+        }
+
+        // &-li{
+        //     text-decoration: none;
+        //     text-align: center;
+        //     list-style-type: none;
+        // }
+
+        &--ItemsList{
+            // background-color: #A40700;
+            display: flex;
+            justify-content: center;
+            color: white;
+            text-Align: center;
+            font-size: 1.6rem;
+            margin-bottom: 1.8rem;
+            text-transform: uppercase;
+            @include breakpoint-up(xXxSmall){
+                font-size: 2rem;
+                margin-bottom: 3rem;
+    
+            }
+        }
+
+        &__LinkItems{
+            display: flex;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-size: 1.6rem;
+            margin-bottom: 1.8rem;
+            text-transform: uppercase;
+            align-items: center;
+            @include breakpoint-up(xXxSmall){
+                font-size: 2rem;
+                margin-bottom: 3rem;
+    
+            }
+
+            & :nth-child(0){
+                margin-bottom: 0;
+            }
+
+
+        }
+
+        &__socialItems{
+            display: flex;
+            // margin-bottom: 4rem;
+            // margin-top: 6.1rem;
+            align-items: flex-end;
+            // align-content: 'flex-end'
+            position: absolute;
+            bottom: 0;
+        }
+
+        &__socialLinks{
+            margin: 0 2rem;
+        }
+
+
+        // &__socialLinks{
+        //     color: white;
+        //     text-align: center;
+        //     font-size: 2rem;
+        //     font-weight: 500;
+        //     margin-bottom: 3rem;
+        //     text-transform: uppercase;
+        // }
+
+ 
+
+        
+        &__list{
+            @include reset-list;
+            @include flex-between-center;  
+            @include breakpoint-up(large){
+                display: none;
+            }
+        }
+
+        &__lang-list{
+            @include reset-list;
+            @include flex-between-center;  
+        }
+
+        &__logo{
+            // margin-top: 1rem;x
+            margin-left: 1rem;
+        }
+
+
+
+        &__selector{
+            background-color: white;
+            color: #EA4D46;
+            padding: 1rem;
+            font-size: 1.6rem;
+            font-weight: 500;
+            font-family: 'Alegreya', serif;
+        }
+
+
+    }
+}
+
+
+.lang-active{
+    background-color: red;
+}
+
+

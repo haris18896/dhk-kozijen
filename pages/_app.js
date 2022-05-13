@@ -1,7 +1,9 @@
 import '../styles/globals.css'
+import '../styles/main.css'
 import Router from 'next/router'
 import Head from 'next/head'
 import NProgress from 'nprogress'
+import { Fragment } from 'react'
 
 NProgress.configure({ showSpinner: false })
 
@@ -16,7 +18,7 @@ function MyApp({ Component, pageProps }) {
   })
 
   return (
-    <>
+    <div className='u-container-1400 u-mx-auto'>
       <Head>
         <link
           rel='stylesheet'
@@ -28,7 +30,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <Component {...pageProps} />
-    </>
+    </div>
   )
 }
 

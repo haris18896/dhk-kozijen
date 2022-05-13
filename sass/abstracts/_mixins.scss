@@ -1,0 +1,107 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+
+
+// 640px, 1024px, 1400px
+$breakpoints-up: ("xXxSmall":"23.325em", "XxSmall":"29.625em", "small": "37em","medium": "40em", "large": "64em", "xlarge": "87.5em");
+
+// 639px, 1023px, 1399px
+$breakpoints-down: ("xXxSmall":"23.3125em","MedSmall":"25.8125","XxSmall":"29.5625em","extraSmall": "35.5em","small": "39.9375em", "medium": "63.9375em", "large": "87.4375em");
+
+@mixin breakpoint-up($size){
+  @media (min-width: map-get($breakpoints-up, $size)){
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size){
+  @media (max-width: map-get($breakpoints-down, $size)){
+    @content;
+  }
+}
+
+@mixin flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between-center{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-center-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-end-center{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@mixin reset-link{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin reset-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+// @mixin respond($breakpoint) {
+//     @if $breakpoint == phone {
+//         @media only screen and (max-width: 37.5em) { @content };    //600px
+//     }
+//     @if $breakpoint == tab-port {
+//         @media only screen and (max-width: 56.25em) { @content };     //900px
+//     }
+//     @if $breakpoint == tab-land {
+//         @media only screen and (max-width: 75em) { @content };    //1200px
+//     }
+//     @if $breakpoint == big-desktop {
+//         @media only screen and (min-width: 112.5em) { @content };    //1800
+//     }
+// }
+

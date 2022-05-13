@@ -1,11 +1,10 @@
-import styles from '../styles/Home.module.scss'
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout/Layout'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Layout home>
         <Head>
           <title>DHK - Kizjien</title>
@@ -13,13 +12,13 @@ export default function Home() {
           <link rel='icon' href='/favicon.ico' />
         </Head>
 
-        <main className={styles.main}>
+        <main>
           <Link href='/about'>
-            <a className={styles.link}>About</a>
+            <a className='visitors-btn--secondary'>About</a>
           </Link>
         </main>
 
-        <footer className={styles.footer}>Footer</footer>
+        <footer>Footer</footer>
       </Layout>
     </div>
   )

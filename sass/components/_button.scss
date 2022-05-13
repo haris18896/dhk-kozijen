@@ -1,0 +1,101 @@
+.btn{
+    background: white;
+    padding: 1.3rem 3.8rem;
+
+    &:hover{
+        cursor: pointer;
+    }
+
+    &__text{
+        font-weight: 500;
+    }
+
+    &__button{
+        border: none;
+        background: #A40700;
+        color: white;
+        font-family: 'Alegreya', serif;
+
+    }
+}
+
+.Button-Submit{
+        border: none;
+        background: #A40700;
+        color: white;
+        font-family: 'Alegreya', serif;
+        font-size: 1.6rem;
+        font-weight: 500;
+        padding: 1rem 2rem;
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        &__disabled{
+            border: none;
+            background: #FF7F78;
+            color: white;
+            font-family: 'Alegreya', serif;
+            font-size: 1.6rem;
+            font-weight: 500;
+            padding: 1rem 2rem;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+}
+
+.visitors-btn{
+    display: inline-block;
+    background: #FFFFFF;
+    color: #A40700;
+    padding: 1rem 2rem !important;
+    opacity: 1 !important;
+
+
+
+
+
+    &--secondary{
+        background: #A40700 !important;
+        color: white !important;
+    }
+
+
+    &__text{
+        font-weight: 800;
+        font-size: 1.3rem;
+        
+        @include breakpoint-up(large){
+            font-size: 1.6rem;
+        }
+
+        &--secondary{
+            color: #FFFFFF;
+        }
+    }
+    &--downloadLink{
+        text-decoration: none;
+        border: none;
+        color: #A40700 !important;
+        background: none;
+
+
+
+
+    }
+
+    &--link{
+
+        & a{
+            text-decoration: none;
+            color: #A40700;
+        }
+    }
+
+    &:hover{
+        cursor: pointer;
+    }
+}
