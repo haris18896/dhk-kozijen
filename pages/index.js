@@ -1,8 +1,21 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout/Layout'
+import { useTranslation } from 'next-i18next'
+
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common', 'footer']))
+    }
+  }
+}
 
 export default function Home() {
+  const { t } = useTranslation('footer')
+
   return (
     <div>
       <Layout home title='DHK - Kizjien'>
@@ -17,7 +30,9 @@ export default function Home() {
           </Link>
         </main>
 
-        <footer>Footer</footer>
+        <footer>
+          <p>{t('description')}</p>
+        </footer>
       </Layout>
     </div>
   )
