@@ -1,18 +1,9 @@
 import Link from 'next/link'
 import React from 'react'
+import Layout from '../components/layout/Layout'
 
 function about() {
-  return (
-    <>
-      <Link href='/'>
-        <a
-        // className={styles.link}
-        >
-          Home
-        </a>
-      </Link>
-    </>
-  )
+  return <Layout></Layout>
 }
 
 export default about
