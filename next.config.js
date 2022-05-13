@@ -11,17 +11,19 @@ const nextConfig = {
     defaultLocale: 'en-US',
     domains: [
       {
-        domain: 'localhost:3000/en-US',
+        name: 'en-US',
+        domain: 'http://www.localhost:3000',
         defaultLocale: 'en-US'
       },
       {
-        domain: 'localhost:3000/nl-NL',
-        defaultLocale: 'nl-NL'
+        name: 'fr',
+        domain: 'http://www.localhost:3000',
+        defaultLocale: 'fr'
       },
       {
-        domain: 'localhost:3000/fr',
-        defaultLocale: 'fr',
-        http: true
+        name: 'nl-NL',
+        domain: 'http://www.localhost:3000',
+        defaultLocale: 'nl-NL'
       }
     ]
   }

@@ -3,7 +3,11 @@ import React from 'react'
 import Layout from '../components/layout/Layout'
 
 function about() {
-  return <Layout></Layout>
+  return (
+    <>
+      <Layout title='About Page'></Layout>
+    </>
+  )
 }
 
 export default about

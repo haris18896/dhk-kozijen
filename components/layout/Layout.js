@@ -5,10 +5,11 @@ import Link from 'next/link'
 const name = 'Haris'
 export const siteTitle = 'Next.js Sample Website'
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home, title }) {
   return (
     <div>
       <Head>
+        <title>{title}</title>
         <link rel='icon' href='/favicon.ico' />
         <meta name='description' content='Learn how to build a personal website using Next.js' />
         <meta

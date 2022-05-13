@@ -12,14 +12,14 @@ NProgress.configure({ showSpinner: false })
 
 function MyApp({ Component, pageProps }) {
   const locale = Router.router?.locale
-  console.log('locale', locale)
+  console.log('locale in _app : ', locale)
   const { i18n } = useTranslation()
 
   Router.events.on('routeChangeStart', url => {
-    NProgress.start()
+    NProgress.start(url)
   })
   Router.events.on('routeChangeComplete', url => {
-    NProgress.done()
+    NProgress.done(url)
   })
 
   return (
