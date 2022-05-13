@@ -8,9 +8,9 @@ export function middleware(request: NextRequest) {
     !request.nextUrl.pathname.includes('/api/') &&
     request.nextUrl.locale === 'default'
 
-  console.log('request.nextUrl', request.nextUrl)
+  // console.log('request.nextUrl', request.nextUrl)
 
-  console.log('shouldHandleLocal', shouldHandleLocal)
+  // console.log('shouldHandleLocal', shouldHandleLocal)
 
   if (shouldHandleLocal) {
     const url = request.nextUrl.clone()
