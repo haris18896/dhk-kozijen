@@ -3,17 +3,22 @@ import '../styles/main.css'
 import Router from 'next/router'
 import Head from 'next/head'
 import NProgress from 'nprogress'
-import { Fragment } from 'react'
+
+// import './I18N/i18next'
+import { useTranslation, I18nextProvider } from 'react-i18next'
+import { useEffect } from 'react'
 
 NProgress.configure({ showSpinner: false })
 
 function MyApp({ Component, pageProps }) {
+  const locale = Router.router?.locale
+  console.log('locale', locale)
+  const { i18n } = useTranslation()
+
   Router.events.on('routeChangeStart', url => {
-    console.log(`Loading: ${url}`)
     NProgress.start()
   })
   Router.events.on('routeChangeComplete', url => {
-    console.log(`Loaded: ${url}`)
     NProgress.done()
   })
 
@@ -28,7 +33,9 @@ function MyApp({ Component, pageProps }) {
           referrerPolicy='no-referrer'
         />
       </Head>
-      <Component {...pageProps} />
+      <I18nextProvider i18n={i18n}>
+        <Component {...pageProps} />
+      </I18nextProvider>
     </div>
   )
 }
