@@ -2,13 +2,14 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout/Layout'
 import { useTranslation } from 'next-i18next'
+import nextI18NextConfig from '../next-i18next.config.js'
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'footer']))
+      ...(await serverSideTranslations(locale, ['common', 'footer'], nextI18NextConfig))
     }
   }
 }
@@ -25,7 +26,7 @@ export default function Home() {
         </Head>
 
         <main>
-          <Link href='/about'>
+          <Link href='/second-page'>
             <a className='visitors-btn--secondary'>About</a>
           </Link>
         </main>

@@ -3,6 +3,7 @@ import '../styles/main.css'
 import Router from 'next/router'
 import NProgress from 'nprogress'
 import { appWithTranslation } from 'next-i18next'
+import nextI18NextConfig from '../next-i18next.config.js'
 
 NProgress.configure({ showSpinner: false })
 
@@ -24,4 +25,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default appWithTranslation(MyApp)
+export default appWithTranslation(MyApp, nextI18NextConfig)
